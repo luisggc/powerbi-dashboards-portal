@@ -1,0 +1,19 @@
+.report-style-class {
+	height: 700px;
+	margin: 1% auto;
+	width: 100%;
+}
+
+.displayMessage {
+	color: #000000;
+	font: normal 22px/27px Segoe UI;
+	letter-spacing: 0;
+	margin-top: 1%;
+	opacity: 1;
+	text-align: center;
+}
+
+
+iframe {
+	border: none;
+}
