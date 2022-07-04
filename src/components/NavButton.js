@@ -1,38 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export default function NavButton({ children, to = "", disableDivider }) {
+export default function NavButton({ children, Icon, to = "" }) {
+  const router = useLocation();
+
+  const isCurrentRouter = router.pathname === "/" + to;
+
   return (
-    <Link to={to}>
-      <div>
-        <div>
-          <div
-            styles={{
-              display: "flex",
-              alignContent: "flex-start",
-            }}
-          >
-            <div></div>
-
-            <p weight={500} styles={{ userSelect: "none" }}>
-              {children}
-            </p>
-          </div>
+    <Link to={to} style={{ color: "inherit" }}>
+      <div className={`nav-button ${isCurrentRouter ? "active" : ""}`}>
+        <div className="nav-button-selected"></div>
+        <div className="nav-icon">
+          <Icon height={25} width={25} />
         </div>
+
+        {children}
       </div>
-      {!disableDivider && <Divider />}
     </Link>
   );
 }
-
-const Divider = () => {
-  return (
-    <div
-      styles={{
-        borderTop: "1px solid",
-        borderColor: "gray.1",
-        marginTop: "16px",
-        marginBottom: "16px",
-      }}
-    />
-  );
-};

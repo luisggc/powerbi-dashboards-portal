@@ -1,18 +1,20 @@
 import NavButton from "./NavButton";
-import './asideDash.css';
+import "./asideDash.css";
+import { HomeIcon } from "@radix-ui/react-icons";
 
-function AsideDash({ opened=true, items }) {
+function AsideDash({ opened = true, items }) {
   return (
     <aside className="aside-dash" hidden={!opened}>
-      <div>
+      <div className="aside-dash-container">
+        <NavButton to={""} Icon={HomeIcon}>
+          Home
+        </NavButton>
         {items.map((workspace) => {
-          const { name, id, path } = workspace;
+          const { name, id, path, Icon } = workspace;
           return (
-            <div key={id} className="accordion">
-              <div>
-                <NavButton to={path}>{name}</NavButton>
-              </div>
-            </div>
+            <NavButton key={id} to={path} Icon={Icon}>
+              {name}
+            </NavButton>
           );
         })}
       </div>

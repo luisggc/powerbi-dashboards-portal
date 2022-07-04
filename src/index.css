@@ -1,12 +1,119 @@
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   height: 100%;
 }
-#root {
-  margin-top: 70px;
-}
 
 .main-dash {
-  margin-left: 200px;
+  margin-left: 250px;
   overflow-x: scroll;
+  padding-top: 70px;
+  /* height: 100% */
+}
+
+.headerDash {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 56px;
+  background: #004b8b;
+  padding: 7px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aside-dash {
+  width: 250px;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 70px;
+  left: 0;
+  background-color: #00325e;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 19px;
+  color: white;
+}
+
+.aside-dash-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 23px;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+
+.nav-button.active {
+  background: linear-gradient(180deg, #042847 0%, rgba(0, 50, 93, 0) 51.04%, #042847 100%);
+}
+
+.nav-button .nav-button-selected {
+  visibility: hidden;
+  width: 6px;
+  height: 100%;
+  background-color: white;
+  border-radius: 0 8px 8px 0;
+}
+
+.nav-button.active .nav-button-selected {
+  visibility: visible;
+}
+
+.nav-icon {
+  margin: 0 15px 0 8px;
+  display: flex;
+  align-items: center;
+}
+
+.aside-dash a {
+  text-decoration: none;
+}
+
+header .flag {
+  height: 23.59px;
+}
+
+.language-selector {
+  background-color: white;
+  position: absolute;
+  left: -8px;
+  top: 100%;
+  height: 70px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.language-option {
+  display: flex;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.language-selector .active {
+  background-color: #004b8b;
+}
+
+.right-header {
+  position: relative;
+  margin-left: -80px;
+}
+
+.aside-group {
 }

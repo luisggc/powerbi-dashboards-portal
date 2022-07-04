@@ -1,42 +1,25 @@
-import './headerDash.css';
-import { CaretDownIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'
+import "./headerDash.css";
+import { CaretDownIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import LanguageSelector from "./LanguageSelector";
 
 function HeaderDash({ setOpened, opened, theme }) {
+ 
 
-  const selectLanguage = (language) => {
-    //localStorage.setItem("language", "pt");
-  }
-  
+
   return (
     <header className="headerDash">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        
-        <div>
-          <h4>Icon</h4>
+      <div className="logo">
+        <h4>Icon</h4>
+      </div>
+
+      <div>
+        <div className="right-header">
+        <LanguageSelector />
         </div>
-        <div>
-          <div
-            onClick={() => selectLanguage()}
-          >
-            <select></select>
-            <CaretDownIcon />
-          </div>
-        </div>
-        <div className="burgerIcon" styles={{ display: "none" }}>
+        {/* <div className="burgerIcon">
           <HamburgerMenuIcon />
-          <div
-            opened={opened}
-            onClick={() => setOpened((o) => !o)}
-            size="sm"
-            mr="xl"
-          />
-        </div>
+          <div opened={opened} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />
+        </div> */}
       </div>
     </header>
   );
