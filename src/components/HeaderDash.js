@@ -1,20 +1,32 @@
 import "./headerDash.css";
-import { CaretDownIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import {
+  DashboardIcon,
+  CaretDownIcon,
+  HamburgerMenuIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 import LanguageSelector from "./LanguageSelector";
 
 function HeaderDash({ setOpened, opened, theme }) {
- 
-
-
   return (
     <header className="headerDash">
       <div className="logo">
-        <h4>Icon</h4>
+        <div>
+          <DashboardIcon height={23} width={23} />
+        </div>
+        <div>
+          <h2>MyDash</h2>
+        </div>
       </div>
 
       <div>
         <div className="right-header">
-        <LanguageSelector />
+          <LanguageSelector />
+          <div className="github-logo">
+            <a href="https://github.com/luisggc/powerbi-dashboards-portal">
+              <GitHubLogoIcon height={23} width={23} />
+            </a>
+          </div>
         </div>
         {/* <div className="burgerIcon">
           <HamburgerMenuIcon />
