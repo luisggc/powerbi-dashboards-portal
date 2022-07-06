@@ -6,14 +6,18 @@ function AsideDash({ opened = true, items }) {
   return (
     <aside className="aside-dash" hidden={!opened}>
       <div className="aside-dash-container">
-        <NavButton to={""} Icon={HomeIcon}>
-          Home
-        </NavButton>
+        <NavButton to={""} Icon={HomeIcon} label="Home" />
         {items.map((workspace) => {
-          const { name, id, path, Icon } = workspace;
+          const { name, id, path, Icon, dashboards } = workspace;
           return (
-            <NavButton key={id} to={path} Icon={Icon}>
-              {name}
+            <NavButton key={id} to={path} Icon={Icon} label={name}>
+              {dashboards ? (
+                Object.entries(dashboards)?.map(([dashboardName, dashboardLink]) => (
+                  <NavButton key={dashboardName} to={dashboardLink} label={dashboardName} />
+                ))
+              ) : (
+                <></>
+              )}
             </NavButton>
           );
         })}
