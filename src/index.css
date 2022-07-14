@@ -91,6 +91,7 @@ body,
 .nav-icon-arrow {
   margin-right: 15px;
   margin-left: auto;
+  transition: 0.2s;
 }
 
 .aside-dash a {

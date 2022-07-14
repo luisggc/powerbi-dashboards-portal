@@ -5,7 +5,7 @@ import "powerbi-report-authoring";
 import "./DemoApp.css";
 
 // Root Component to demonstrate usage of wrapper component
-function DemoApp() {
+function DemoApp({ dashKey, daskLink }) {
   // PowerBI Report object (to be received via callback)
   const [report, setReport] = useState();
 
@@ -39,7 +39,11 @@ function DemoApp() {
   }, [mockSignIn]);
 
   // API end-point url to get embed config for a sample report
-  const sampleReportUrl = "https://playgroundbe-bck-1.azurewebsites.net/Reports/SampleReport";
+  // const sampleReportUrl = "https://playgroundbe-bck-1.azurewebsites.net/Reports/SampleReport";
+  const sampleReportUrl = daskLink //"https://aka.ms/InsightToActionReportEmbedConfig";
+  //https://aka.ms/ThemeReportEmbedConfig
+  //"https://aka.ms/layoutReportEmbedConfig";
+  //const insightToActionReportEndpoint = "https://aka.ms/InsightToActionReportEmbedConfig";
 
   // Report config useState hook
   // Values for properties like embedUrl, accessToken and settings will be set on click of buttons below
@@ -80,17 +84,17 @@ function DemoApp() {
 
   const changeSettings = () => {
     // Update the state "sampleReportConfig" and re-render DemoApp component
-    setReportConfig({
+    setReportConfig((sampleReportConfig) => ({
       ...sampleReportConfig,
       settings: {
         panes: {
           filters: {
-            expanded: false,
-            visible: false,
+            expanded: !sampleReportConfig?.settings?.panes?.filters?.expanded,
+            visible: !sampleReportConfig?.settings?.panes?.filters?.visible,
           },
         },
       },
-    });
+    }));
   };
 
   // Delete the first visual using powerbi-report-authoring library
@@ -154,8 +158,6 @@ function DemoApp() {
 
   const controlButtons = (
     <div className="controls">
-      <button onClick={mockSignIn}>Embed Report</button>
-
       <button onClick={changeSettings}>Hide filter pane</button>
 
       <button onClick={deleteVisual}>Delete a Visual</button>

@@ -10,10 +10,14 @@ function AsideDash({ opened = true, items }) {
         {items.map((workspace) => {
           const { name, id, path, Icon, dashboards } = workspace;
           return (
-            <NavButton key={id} to={path} Icon={Icon} label={name}>
+            <NavButton key={id} Icon={Icon} label={name}>
               {dashboards ? (
                 Object.entries(dashboards)?.map(([dashboardName, dashboardLink]) => (
-                  <NavButton key={dashboardName} to={dashboardLink} label={dashboardName} />
+                  <NavButton
+                    key={dashboardName}
+                    to={dashboardName}
+                    label={dashboardName}
+                  />
                 ))
               ) : (
                 <></>
