@@ -94,7 +94,6 @@ function Dashboard() {
             }
           />
           {Object.entries(dashboards).map(([dashKey, daskLink]) => {
-            console.log(dashboards, daskLink);
             return (
               <Route
                 key={dashKey}

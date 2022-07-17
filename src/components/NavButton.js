@@ -1,10 +1,5 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import {
-  DashboardIcon,
-  CaretDownIcon,
-  HamburgerMenuIcon,
-  GitHubLogoIcon,
-} from "@radix-ui/react-icons";
+import { useLocation, useNavigate } from "react-router-dom";
+import { CaretDownIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 
 export default function NavButton({ children, Icon, label, to }) {
@@ -12,15 +7,14 @@ export default function NavButton({ children, Icon, label, to }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
-  const isCurrentRouter = to ? router.pathname === "/" + encodeURI(to) : false;
+  const isCurrentRouter = to !== undefined ? router.pathname === "/" + encodeURI(to) : false;
 
   const toggleChildren = () => {
     if (children) {
       setIsOpen((prev) => !prev);
       return;
     }
-    console.log(encodeURI(to))
-    navigate(to)
+    navigate(to);
   };
 
   return (

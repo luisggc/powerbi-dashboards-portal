@@ -8,7 +8,7 @@ function AsideDash({ opened = true, items }) {
       <div className="aside-dash-container">
         <NavButton to={""} Icon={HomeIcon} label="Home" />
         {items.map((workspace) => {
-          const { name, id, path, Icon, dashboards } = workspace;
+          const { name, id, Icon, dashboards } = workspace;
           return (
             <NavButton key={id} Icon={Icon} label={name}>
               {dashboards ? (
