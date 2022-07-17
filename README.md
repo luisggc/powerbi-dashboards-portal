@@ -3,7 +3,7 @@
 **Under development**
 Web portal to navigate between dashboards using Power BI API.
 
-<!-- Check a live demo here: [https://dashboard-with-mantine.netlify.app/](https://dashboard-with-mantine.netlify.app/) -->
+Check a live demo here: [https://powerbi-dashboards-portal.netlify.app/](https://powerbi-dashboards-portal.netlify.app/)
 
 ## 🎯 Techonologies / Habilities
 
