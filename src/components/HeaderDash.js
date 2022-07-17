@@ -1,7 +1,7 @@
 import { DashboardIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import LanguageSelector from "./LanguageSelector";
 
-function HeaderDash({ setOpened, opened, theme }) {
+function HeaderDash() {
   return (
     <header className="headerDash">
       <div className="logo">
@@ -22,10 +22,6 @@ function HeaderDash({ setOpened, opened, theme }) {
             </a>
           </div>
         </div>
-        {/* <div className="burgerIcon">
-          <HamburgerMenuIcon />
-          <div opened={opened} onClick={() => setOpened((o) => !o)} size="sm" mr="xl" />
-        </div> */}
       </div>
     </header>
   );
