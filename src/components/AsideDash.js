@@ -1,5 +1,4 @@
 import NavButton from "./NavButton";
-import "./asideDash.css";
 import { HomeIcon } from "@radix-ui/react-icons";
 
 function AsideDash({ opened = true, items }) {

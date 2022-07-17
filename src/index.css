@@ -95,10 +95,6 @@ body,
   transition: 0.2s;
 }
 
-.aside-dash a {
-  text-decoration: none;
-}
-
 header .flag {
   height: 23.59px;
 }

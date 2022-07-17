@@ -5,6 +5,10 @@ import "powerbi-report-authoring";
 import "./DemoApp.css";
 
 function DemoApp({ dashKey, daskLink }) {
+
+  // API end-point url to get embed config for a sample report
+  const sampleReportUrl = daskLink;
+  
   // PowerBI Report object (to be received via callback)
   const [report, setReport] = useState();
 
@@ -31,14 +35,11 @@ function DemoApp({ dashKey, daskLink }) {
       embedUrl: reportConfig.EmbedUrl,
       accessToken: reportConfig.EmbedToken.Token,
     }));
-  }, [daskLink]);
+  }, [sampleReportUrl]);
 
   useEffect(() => {
     mockSignIn();
   }, [mockSignIn]);
-
-  // API end-point url to get embed config for a sample report
-  const sampleReportUrl = daskLink;
 
   // Report config useState hook
   // Values for properties like embedUrl, accessToken and settings will be set on click of buttons below

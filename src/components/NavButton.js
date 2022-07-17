@@ -19,7 +19,7 @@ export default function NavButton({ children, Icon, label, to }) {
 
   return (
     <>
-      <a style={{ color: "inherit" }} onClick={toggleChildren}>
+      <div onClick={toggleChildren}>
         <div className={`nav-button ${isCurrentRouter ? "active" : ""}`}>
           <div className="nav-button-selected"></div>
           <div className="nav-icon">{Icon ? <Icon height={25} width={25} /> : <></>}</div>
@@ -31,7 +31,7 @@ export default function NavButton({ children, Icon, label, to }) {
             {children?.length > 0 ? <CaretDownIcon height={25} width={25} /> : <></>}
           </div>
         </div>
-      </a>
+      </div>
       <div style={{ display: isOpen ? "block" : "none", marginLeft: 25 }}>{children}</div>
     </>
   );

@@ -1,10 +1,4 @@
-import "./headerDash.css";
-import {
-  DashboardIcon,
-  CaretDownIcon,
-  HamburgerMenuIcon,
-  GitHubLogoIcon,
-} from "@radix-ui/react-icons";
+import { DashboardIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import LanguageSelector from "./LanguageSelector";
 
 function HeaderDash({ setOpened, opened, theme }) {

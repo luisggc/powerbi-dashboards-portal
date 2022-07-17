@@ -5,14 +5,15 @@ import DemoApp from "./components/DemoApp";
 import { LanguageContext } from "./context/LanguageContext";
 import { useContext } from "react";
 import { EyeOpenIcon, LockClosedIcon, HeartIcon } from "@radix-ui/react-icons";
+import ReadMe from "./ReadMe";
 
 function Dashboard() {
   const { currentLanguage } = useContext(LanguageContext);
 
   let workspaces = [
     {
-      name: "iris DataExplore",
-      id: "workspace-1asd",
+      name: "Risco Operacional",
+      id: "workspace-rfbr93ubfr93",
       language: "pt",
       Icon: EyeOpenIcon,
       dashboards: {
@@ -22,8 +23,8 @@ function Dashboard() {
       },
     },
     {
-      name: "iris DataExplore",
-      id: "workspace-ASDASDSA",
+      name: "Operational Risk",
+      id: "workspace-swf39398453f9h",
       Icon: EyeOpenIcon,
       language: "en",
       dashboards: {
@@ -43,7 +44,7 @@ function Dashboard() {
     },
     {
       name: "Safety",
-      id: "workspace-ASDASddddddDSA",
+      id: "workspace-fdne393nf394t",
       Icon: LockClosedIcon,
       language: "en",
       dashboards: {
@@ -52,7 +53,7 @@ function Dashboard() {
     },
     {
       name: "Saúde",
-      id: "workspace-1asdfsdfdssd",
+      id: "workspace-938nyf9349fyn394",
       Icon: HeartIcon,
       language: "pt",
       dashboards: {
@@ -61,7 +62,7 @@ function Dashboard() {
     },
     {
       name: "Health",
-      id: "workspace-dsdsddds",
+      id: "workspace-n3f09fgn4398fn3",
       Icon: HeartIcon,
       language: "en",
       dashboards: {
@@ -69,11 +70,6 @@ function Dashboard() {
       },
     },
   ];
-
-  // workspaces = workspaces.map((w) => ({
-  //   ...w,
-  //   path: encodeURI(w.name),
-  // }));
 
   let dashboards = workspaces.map((w) => w.dashboards);
   dashboards = dashboards.reduce((p, c) => ({ ...c, ...p }), {});
@@ -87,11 +83,7 @@ function Dashboard() {
         <Routes>
           <Route
             path="/"
-            element={
-              <div>
-                <p>indexx</p>
-              </div>
-            }
+            element={<ReadMe />}
           />
           {Object.entries(dashboards).map(([dashKey, daskLink]) => {
             return (
