@@ -4,7 +4,6 @@ import { PowerBIEmbed } from "powerbi-client-react";
 import "powerbi-report-authoring";
 import "./DemoApp.css";
 
-// Root Component to demonstrate usage of wrapper component
 function DemoApp({ dashKey, daskLink }) {
   // PowerBI Report object (to be received via callback)
   const [report, setReport] = useState();
@@ -32,18 +31,14 @@ function DemoApp({ dashKey, daskLink }) {
       embedUrl: reportConfig.EmbedUrl,
       accessToken: reportConfig.EmbedToken.Token,
     }));
-  }, []);
+  }, [daskLink]);
 
   useEffect(() => {
     mockSignIn();
   }, [mockSignIn]);
 
   // API end-point url to get embed config for a sample report
-  // const sampleReportUrl = "https://playgroundbe-bck-1.azurewebsites.net/Reports/SampleReport";
-  const sampleReportUrl = daskLink //"https://aka.ms/InsightToActionReportEmbedConfig";
-  //https://aka.ms/ThemeReportEmbedConfig
-  //"https://aka.ms/layoutReportEmbedConfig";
-  //const insightToActionReportEndpoint = "https://aka.ms/InsightToActionReportEmbedConfig";
+  const sampleReportUrl = daskLink;
 
   // Report config useState hook
   // Values for properties like embedUrl, accessToken and settings will be set on click of buttons below
